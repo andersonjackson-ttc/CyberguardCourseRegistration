@@ -29,7 +29,23 @@
     <form>
         <select id="dropdown">
             <script>
-                //Put function here
+                function getMajorList() {
+    urlString = "http://localhost:8080/api/v1/major";
+    $.ajax({method: "GET", url: urlString})
+      .done(function(response)  {
+        majorDropDown = $("#major");
+        $.each(response, function(index, major){
+          $("<option>").val(major.id).text(major.name).appendTo(majorDropDown);
+        });
+      })
+      .fail(function(){
+        alert("Error connecting to the server");
+      })
+      .always(function(){
+        alert("always executed");
+      })
+    ;
+  }
             </script>
         </select>
     </form>
