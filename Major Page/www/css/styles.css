@@ -1,0 +1,49 @@
+#header{
+    background-color: grey;
+}
+#header button{
+    margin-left: 35px;
+    margin-top: 47px;;
+    margin-bottom: 50px;
+}
+#logo{
+    margin-left: 28%;
+    margin-right: 25%;
+}
+#back{
+    width: 50px;
+    height: 50px;
+}
+#content{
+    background-color: lightgray;
+}
+#main{
+    height: 650px;
+    background-color: lightgray;
+    
+}
+body{
+    background-color: lightblue
+}
+#dropdown{
+    margin-top: 50px;
+    margin-left: 43%;
+    margin-right: 43%;
+    display: block;
+    width: 200px;
+    height: 25px;
+}
+#submit{
+    margin-top: 150px;
+    margin-left: 45%;
+    margin-right: 45%;
+    width: 150px;
+    height: 50px;
+}
+#footer{
+    background-color: grey;
+    height: 50px
+}
+#footer p{
+    margin-left: 45%;
+}
