@@ -19,7 +19,7 @@
     background-color: lightgray;
 }
 #main{
-    height: 650px;
+    height: 400px;
     background-color: lightgray;
     
 }
@@ -35,7 +35,7 @@ body{
     width: 200px;
     height: 25px;
 }
-#submit{
+.submit{
     display: block;
     margin-top: 150px;
     margin-left: auto;
