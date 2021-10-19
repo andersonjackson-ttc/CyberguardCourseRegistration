@@ -21,6 +21,26 @@ function newTable(){
         
     
 }
+function getCourses() {
+    urlString = " ";
+    $.ajax({method: "GET", url: urlString, dataType: 'json'})
+    .done(function(response){
+      JSON.stringify(response);
+      alert((JSON.stringify(response)));
+      courseTable = $("#courses");
+      $.each((response), function(index, course){
+        console.log(1);
+        $("<td>").val(course.id).text(course.name).appendTo(courseTable);
+      });
+    })
+    .fail(function(){
+      alert("Error connecting to the server");
+    })
+    .always(function(){
+    
+    })
+    ;
+  }
 
 function clearcontent(elementID) {
             document.getElementById(elementID).innerHTML = "";
