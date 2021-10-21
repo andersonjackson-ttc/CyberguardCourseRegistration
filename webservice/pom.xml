@@ -14,7 +14,7 @@
 	<name>webservice</name>
 	<description>Course Registration webservice</description>
 	<properties>
-		<java.version>11</java.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
