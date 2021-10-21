@@ -23,19 +23,19 @@
     <img id="logo" src="img/download.png">
   </div>
   <div id="main">
-      <form class="dropdown" action="/courses">
-          <select class="dropbtn" name="major" id="myDropdown" onclick="getMajorList()">
+      <form class="dropdown" action="">
+          <select class="dropbtn" name="major" id="myDropdown" onclick="getMajorList()" onchange="Class(this.value)">
             <option class="dropdown-content" selected="true" disabled="disabled">Choose Major</option>    
 
           </select>
-      
-    <input type="submit" value="Submit Major" id="submit" onclick="newTable()">
-      
       </form>
-      
-        <div id="table">
-        </div>
+      <div id="courseSubmit">
+        <input type="submit" value="Submit Major" class="submit" id="btnMajor" >
+      </div>
+
   </div>
+          <div id="table">
+        </div>
   <div id="footer">
     <p>:copyright: Trident Technical College</p>
   </div>

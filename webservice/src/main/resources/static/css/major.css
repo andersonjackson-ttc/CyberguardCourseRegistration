@@ -18,27 +18,32 @@
     background-color: lightgray;
 }
 #main{
-    height: 650px;
+    height: auto;
     background-color: lightgray;
     
 }
 body{
     background-color: lightblue
 }
-.dropdown{
+#myDropDown{
     margin-top: 50px;
-    margin-left: 43%;
-    margin-right: 43%;
+    margin-left: 15%;
+    margin-right: 20%;
     display: block;
-    width: 200px;
+    width: auto;
     height: 25px;
 }
-#submit{
+#btnMajor.submit{
     margin-top: 10%;
-    /* margin-left: 43%;
-    margin-right: 43%; */
-    width: 150px;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-bottom: 20px;
+    width: auto;
     height: 50px;
+}
+#courseSubmit{
+    margin-right: auto;
+    margin-left: auto;
 }
 #footer{
     background-color: grey;
@@ -56,6 +61,9 @@ body{
   font-size: 16px;
   border: none;
   cursor: pointer;
+    margin-right: 30%;
+  margin-left: 25%;
+
 }
 
 /* Dropdown button on hover & focus */
@@ -66,17 +74,17 @@ body{
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
+
 }
 
 
 
 form{
-    border: 1px solid black;
     margin-top: 4.2%; 
     margin-left: auto;
     margin-right: auto;
-    width: 600px;
+    width: 200px;
     background-color: lightgray;
 }
 lable{
