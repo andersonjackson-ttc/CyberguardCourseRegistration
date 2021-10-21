@@ -22,26 +22,39 @@ function newTable(){
     
 }
 function getCourses() {
-    urlString = " ";
-    $.ajax({method: "GET", url: urlString, dataType: 'json'})
-    .done(function(response){
-      JSON.stringify(response);
+
+  urlString = "/courses?major=1+";
+
+
+  $.ajax({method: "GET", url: urlString, dataType: 'json'})
+    .done(function(response)  {
+      // response = JSON.stringify(response);
       alert((JSON.stringify(response)));
-      courseTable = $("#courses");
-      $.each((response), function(index, course){
-        console.log(1);
-        $("<td>").val(course.id).text(course.name).appendTo(courseTable);
-      });
+      table = $("#table");
+      var appenddata1 = "";
+
+
+      appenddata1= "<tr><th id="boxCourse"></th><th id="textCourse">Course Id</th><th id="textCourse">Course Name</th></tr>";
+
+      for (var j=0; j< response.length; j++)
+      {
+        appenddata1+= "<tr><td id='boxCourse'><input type='checkbox' class='taking'></td>" + "<td>" + response[j].course_ID+ "</td>" + "<td>"+ response[j].course_Name + "</td></tr>";
+      }
+      table.append(appenddata1);
+
+
+
+
+
     })
     .fail(function(){
       alert("Error connecting to the server");
     })
     .always(function(){
-    
-    })
-    ;
-  }
 
+    })
+  ;
+  }
 function clearcontent(elementID) {
             document.getElementById(elementID).innerHTML = "";
         }
