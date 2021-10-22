@@ -21,14 +21,15 @@ public class MajorController {
 		this.majorService = majorService;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
 	@GetMapping
+	@CrossOrigin(origins = "http://localhost:8080")
 	public List<Major> getMajors() {
 		return majorService.getMajors();
 	}//end of get majors
+	
 
 
 	
-	
 
-}
+	
+}	

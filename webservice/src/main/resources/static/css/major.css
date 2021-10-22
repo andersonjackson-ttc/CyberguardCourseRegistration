@@ -18,27 +18,32 @@
     background-color: lightgray;
 }
 #main{
-    height: 650px;
+    height: auto;
     background-color: lightgray;
     
 }
 body{
     background-color: lightblue
 }
-.dropdown{
+#myDropDown{
     margin-top: 50px;
-    margin-left: 43%;
-    margin-right: 43%;
+    margin-left: 15%;
+    margin-right: 20%;
     display: block;
-    width: 200px;
+    width: auto;
     height: 25px;
 }
-#submit{
+#btnMajor.submit{
     margin-top: 10%;
-    margin-left: 43%;
-    margin-right: 43%;
-    width: 150px;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-bottom: 20px;
+    width: auto;
     height: 50px;
+}
+#courseSubmit{
+    margin-right: auto;
+    margin-left: auto;
 }
 #footer{
     background-color: grey;
@@ -48,3 +53,86 @@ body{
     margin-left: 45%;
 }
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+    margin-right: 30%;
+  margin-left: 25%;
+
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: block;
+
+}
+
+
+
+form{
+    margin-top: 4.2%; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    background-color: lightgray;
+}
+lable{
+    margin-left: auto;
+    margin-right: auto;
+}
+#text{
+    background-color: palegoldenrod;
+}
+input{
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    scroll-margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+#textCourse{
+    
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+    padding: 10px;
+}
+#boxCourse{
+    width: 30px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+td{
+    background-color: silver;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+}
+th{
+    background-color: #4A0404;
+    color: white;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+    padding: 10px;
+}
+.taking{
+    width: 50px;
+    height: 50px;
+}
