@@ -1,0 +1,30 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+<html>
+<head>
+  <title>Login To Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="content">
+  <div id="header">
+    <button onclick="window.location.href='https://www.tridenttech.edu/student/life/st_portal.htm';"><img id="back" src="img/go%20back.png" ></button></a>
+    <img id="logo" src="img/download.png">
+  </div>
+  <div id="main">
+  <form method="post" th:action="@{/login}">
+    <fieldset><legend>Student Log In</legend>
+        <div id="errorMessageArea"></div>
+      <p><label>Username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
+      <p><label>Password:<input type="text" name="Password" size="30" maxlength="40" id="text" class="password"></label></p>
+
+
+      <p><input type="submit" value="Log In" id="login"></p>
+    </fieldset>
+    </form>
+      <p id="link">Not a student? <a href="#" id="link"> Register</a></p>
+  </div>
+  <div id="footer">
+    <p>:copyright: Trident Technical College</p>
+  </div>
+</body>
+</html>
