@@ -14,8 +14,30 @@
   <form method="post" action="/login">
     <fieldset><legend>Register</legend>
 
-      <p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
-      <p><label>Create a password:<input type="text" name="Password" size="30" maxlength="40" id="text" class="password"></label></p>
+      <!--<p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
+      <p><label>Create a password:<input type="text" name="Password" size="30" maxlength="40" id="text" class="password"></label></p>-->
+      
+      <div>
+      <label th:text="#{label.user.userName}">Username:</label>
+        <input th:field="*{userName}"/>
+        <!--Error notification goes here
+        <p th:each="error : ${#fields.errors('userName')}"
+          th:text="${error}">Error</p> -->
+          </div>
+
+          <div>
+          <label th:text="#{label.user.password}">Password:</label>
+        <input type="password" th:field="*{password}"/>
+      <!--  Error notification goes here
+      <p th:each="error : ${#fields.errors('password')}"
+          th:text="${error}">Error</p> -->
+          </div>
+
+          <div>
+          <label th:text="#{label.user.confirmPass}">Confirm Password:</label>
+        <input type="password" th:field="*{matchingPassword}"/>
+        </div>
+
 
 
       <p><input type="submit" value="Create Account" id="login"></p>
