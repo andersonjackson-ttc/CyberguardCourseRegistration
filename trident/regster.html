@@ -11,7 +11,7 @@
     <img id="logo" src="img/download.png">
   </div>
   <div id="main">
-  <form method="post" action="/login">
+  <form method="post" action="/registration">
     <fieldset><legend>Register</legend>
 
       <!--<p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
@@ -33,11 +33,17 @@
           th:text="${error}">Error</p> -->
           </div>
 
+          <div>
+          <label th:text="#{label.user.confirmPass}">Confirm Password:</label>
+        <input type="password" th:field="*{matchingPassword}"/>
+        </div>
+
+
 
       <p><input type="submit" value="Create Account" id="login"></p>
     </fieldset>
     </form>
-      <p id="link">Have an account? <a href="#" id="link"> Log In</a></p>
+      <p id="link">Have an account? <a href="/login.html" id="link"> Log In</a></p>
   </div>
   <div id="footer">
     <p>:copyright: Trident Technical College</p>
