@@ -11,7 +11,8 @@
     <img id="logo" src="img/download.png">
   </div>
   <div id="main">
-  <form method="post" action="/registration">
+  <!--<form method="post" action="/registration">-->
+    <form action="/" th:object="${user}" method="POST" enctype="utf8">
     <fieldset><legend>Register</legend>
 
       <!--<p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
@@ -21,7 +22,7 @@
       <label th:text="#{label.user.username}">username:</label>
         <input th:field="*{username}"/>
         <!--Error notification goes here
-        <p th:each="error : ${#fields.errors('userName')}"
+        <p th:each="error : ${#fields.errors('username')}"
           th:text="${error}">Error</p> -->
           </div>
 
