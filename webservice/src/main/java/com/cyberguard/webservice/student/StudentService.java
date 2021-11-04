@@ -36,9 +36,9 @@ public class StudentService implements UserDetailsService
 		if (exists)
 			throw new IllegalStateException("Username already taken");
 		
-		String encodedPassword = bCryptPasswordEncoder.encode(student.getPassword());
-		student.setPassword(encodedPassword);
-		
+		//String encodedPassword = bCryptPasswordEncoder.encode(student.getPassword());
+		//student.setPassword(encodedPassword);
+		student.setPassword(student.getPassword());
 		studentRepository.save(student);
 		
 		return "It works";

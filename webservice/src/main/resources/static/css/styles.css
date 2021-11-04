@@ -1,14 +1,19 @@
 #header{
+    justify-content: space-between;
+    display: flex;
     background-color: grey;
 }
 #header button{
-    margin-left: 35px;
-    margin-top: 47px;;
-    margin-bottom: 50px;
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 #logo{
-    margin-left: 25%;
-    margin-right: 25%;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #back{
     width: 50px;
@@ -18,32 +23,26 @@
     background-color: lightgray;
 }
 #main{
-    height: auto;
+    height: 400px;
     background-color: lightgray;
-    
+    text-align: center;
 }
 body{
-    background-color: lightblue
+    background-color: lightblue;
 }
-#myDropDown{
-    margin-top: 50px;
-    margin-left: 15%;
-    margin-right: 20%;
+#dropdown{
+    margin: 50px auto;
     display: block;
-    width: auto;
+    width: 200px;
     height: 25px;
 }
-#btnMajor.submit{
-    margin-top: 10%;
-    margin-left: 50%;
-    margin-right: 50%;
-    margin-bottom: 20px;
-    width: auto;
-    height: 50px;
-}
-#courseSubmit{
-    margin-right: auto;
+.submit{
+    display: block;
+    margin-top: 150px;
     margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 50px;
 }
 #footer{
     background-color: grey;
@@ -52,39 +51,13 @@ body{
 #footer p{
     margin-left: 45%;
 }
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-    margin-right: 30%;
-  margin-left: 25%;
-
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: block;
-
-}
-
-
-
 form{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
     margin-top: 4.2%; 
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
     background-color: lightgray;
 }
 lable{
@@ -100,7 +73,6 @@ input{
     margin-right: auto;
 }
 table{
-    scroll-margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
@@ -136,3 +108,22 @@ th{
     width: 50px;
     height: 50px;
 }
+#link{
+    display: inline-block;
+}
+button a{
+    text-decoration: none;
+    color: black;
+}
+.right{
+    margin-right: 5px;
+}
+#login{
+    font-weight: bold;
+    background-color: royalblue;
+    color: white;
+    height: 50px;
+    width: 95%;
+    display: block;
+}
+
