@@ -5,6 +5,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
 @Service
 public class StudentService implements UserDetailsService 
 {
@@ -29,18 +31,21 @@ public class StudentService implements UserDetailsService
 		// TODO Auto-generated method stub
 		return studentRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND, username)));
 	}
-
-	public String signUpStudent(Student student) {
+			
+	public ModelAndView signUpStudent(Student student) {
 		boolean exists = studentRepository.findByUsername(student.getUsername()).isPresent();
 		
 		if (exists)
 			throw new IllegalStateException("Username already taken");
 		
-		//String encodedPassword = bCryptPasswordEncoder.encode(student.getPassword());
-		//student.setPassword(encodedPassword);
+		String encodedPassword = bCryptPasswordEncoder.encode(student.getPassword());
+		student.setPassword(encodedPassword);
 		student.setPassword(student.getPassword());
 		studentRepository.save(student);
-		
-		return "It works";
+		System.out.println(11);
+	    ModelAndView modelAndView = new ModelAndView("login.html");
+	    modelAndView.addObject("message", "Baeldung");
+	    System.out.println(11);
+	    return modelAndView;
 	}
 }

@@ -1,4 +1,4 @@
-<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+<!doctype html>
 <html>
 <head>
   <title>Login To Student Portal</title>
@@ -12,23 +12,25 @@
   </div>
   <div id="main">
   <!--<form method="post" action="/registration">-->
-    <form action="/registration" th:object="${student}" method="POST" enctype="utf8">
+    <form action="/registration" method="POST">
     <fieldset><legend>Register</legend>
 
       <!--<p><label>Create a username:<input type="text" name="username" size="30" maxlength="40" id="text" class="username"></label></p>
       <p><label>Create a password:<input type="text" name="password" size="30" maxlength="40" id="text" class="password"></label></p>-->
       
       <div>
-      <label th:text="#{label.student.username}">username:</label>
-        <input th:field="*{username}"/>
+      <label">Username: <input type="text" name="username"></label>
+        
         <!--Error notification goes here
         <p th:each="error : ${#fields.errors('username')}"
           th:text="${error}">Error</p> -->
           </div>
 
           <div>
+            <label>Password: <input type="password" name="password"></label> 
+              <!--
           <label th:text="#{label.student.password}">password:</label>
-        <input type="password" th:field="*{password}"/>
+        <input type="password" th:field="*{password}"/>-->
       <!--  Error notification goes here
       <p th:each="error : ${#fields.errors('password')}"
           th:text="${error}">Error</p> -->
