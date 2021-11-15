@@ -25,6 +25,12 @@ public class Student implements UserDetails {
 	private String username;
 	private String password;
 	
+	@JsonIgnore
+	@ManytoMany
+	@JoinTable(
+			name = "majors",
+			joinColumns = @JoinColumn(name = "ID"))
+	
 	public Student() {
 		
 	}
@@ -42,6 +48,14 @@ public class Student implements UserDetails {
 		// TODO Auto-generated method stub
 		SimpleGrantedAuthority authority = new SimpleGrantedAuthority("student");
 		return Collections.singletonList(authority);
+	}
+	public void setID(Long id)
+	{
+		id = id;
+	}
+	public Long getID()
+	{
+		return id;
 	}
 	
 	
