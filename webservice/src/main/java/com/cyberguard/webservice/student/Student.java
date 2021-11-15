@@ -24,6 +24,7 @@ public class Student implements UserDetails {
 	private Long id;
 	private String username;
 	private String password;
+	private int major;
 	
 	@JsonIgnore
 	@ManytoMany
@@ -35,9 +36,10 @@ public class Student implements UserDetails {
 		
 	}
 	 
-	public Student(String username, String password) {
+	public Student(String username, String password, int major) {
 		this.username = username;
 		this.password = password;
+		this.major = major;
 	}
 
 
@@ -89,7 +91,10 @@ public class Student implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
+	public int getMajor()
+	{
+		return major;
+	}
 	
 
 	

@@ -23,8 +23,8 @@ public class RegistrationController {
 	
 	
 	@PostMapping
-	public @ResponseBody void register(@RequestParam("username") String username, @RequestParam("password") String password) {
-		RegistrationRequest request = new RegistrationRequest(username, password);
+	public @ResponseBody void register(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("major") int major) {
+		RegistrationRequest request = new RegistrationRequest(username, password, major);
 		registrationService.register(request);
 		
 		
