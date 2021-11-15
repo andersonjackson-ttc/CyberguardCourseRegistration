@@ -15,7 +15,7 @@ public class RegistrationService {
 	
 	public void register(RegistrationRequest request) {
 		// TODO Auto-generated method stub
-		studentService.signUpStudent(new Student(request.getUsername(), request.getPassword(), request.getMajor()));
+		studentService.signUpStudent(new Student(request.getUsername(), request.getPassword()));
 	}
 
 }

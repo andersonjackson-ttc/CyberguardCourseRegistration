@@ -22,8 +22,12 @@ public class RegistrationController {
 	
 	
 	@PostMapping
+<<<<<<< HEAD
 	@GetMapping
 	public String register(@RequestParam("username") String username, @RequestParam("password") String password) {
+=======
+	public @ResponseBody void register(@RequestParam("username") String username, @RequestParam("password") String password) {
+>>>>>>> parent of 822a7d8 (allow major on registration)
 		RegistrationRequest request = new RegistrationRequest(username, password);
 		registrationService.register(request);
 		

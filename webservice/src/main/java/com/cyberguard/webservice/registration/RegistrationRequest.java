@@ -12,12 +12,10 @@ import lombok.ToString;
 public class RegistrationRequest {
 	private  String username;
 	private  String password;
-	private int major;
 	
-	public RegistrationRequest(String username, String password, int major) {
+	public RegistrationRequest(String username, String password) {
 		this.username = username;
 		this.password = password;
-		this.major = major;
 	}
 	public RegistrationRequest() {
 
