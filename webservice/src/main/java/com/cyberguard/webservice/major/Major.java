@@ -3,6 +3,7 @@ package com.cyberguard.webservice.major;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -22,11 +23,11 @@ public class Major {
 	private Long ID;
 	
 	@JsonIgnore
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 			name="major_courses",
-			joinColumns = @JoinColumn(name = "ID"),
-			inverseJoinColumns = @JoinColumn(name = "Course_ID")
+			joinColumns = @JoinColumn(name = "ID", referencedColumnName = "ID"),
+			inverseJoinColumns = @JoinColumn(name = "Course_ID", referencedColumnName = "Course_ID")
 			)
 	
 	private Set<Course> courses = new HashSet<>();

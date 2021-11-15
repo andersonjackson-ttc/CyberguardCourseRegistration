@@ -29,10 +29,11 @@ public class StudentService implements UserDetailsService
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
+		
 		return studentRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND, username)));
 	}
-			
-	public ModelAndView signUpStudent(Student student) {
+
+	public void signUpStudent(Student student) {
 		boolean exists = studentRepository.findByUsername(student.getUsername()).isPresent();
 		
 		if (exists)
@@ -42,10 +43,5 @@ public class StudentService implements UserDetailsService
 		student.setPassword(encodedPassword);
 		student.setPassword(student.getPassword());
 		studentRepository.save(student);
-		System.out.println(11);
-	    ModelAndView modelAndView = new ModelAndView("login.html");
-	    modelAndView.addObject("message", "Baeldung");
-	    System.out.println(11);
-	    return modelAndView;
 	}
 }
