@@ -41,8 +41,6 @@ public class StudentService implements UserDetailsService
 		
 		String encodedPassword = bCryptPasswordEncoder.encode(student.getPassword());
 		student.setPassword(encodedPassword);
-		student.setPassword(student.getPassword());
-		student.setMajor(student.getMajor());
 		studentRepository.save(student);
 	}
 }
