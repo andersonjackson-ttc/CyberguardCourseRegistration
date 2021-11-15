@@ -12,6 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.cyberguard.webservice.course.Course;
+import com.cyberguard.webservice.student.Student;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -31,6 +32,9 @@ public class Major {
 			)
 	
 	private Set<Course> courses = new HashSet<>();
+	
+	
+
 	
 
 	private String Major_Name;

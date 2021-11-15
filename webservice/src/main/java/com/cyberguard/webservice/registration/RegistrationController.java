@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.AllArgsConstructor;
 
@@ -22,13 +23,9 @@ public class RegistrationController {
 	
 	
 	@PostMapping
-<<<<<<< HEAD
 	@GetMapping
-	public String register(@RequestParam("username") String username, @RequestParam("password") String password) {
-=======
-	public @ResponseBody void register(@RequestParam("username") String username, @RequestParam("password") String password) {
->>>>>>> parent of 822a7d8 (allow major on registration)
-		RegistrationRequest request = new RegistrationRequest(username, password);
+	public String register(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("id") int id) {
+		RegistrationRequest request = new RegistrationRequest(username, password, id);
 		registrationService.register(request);
 		
 		

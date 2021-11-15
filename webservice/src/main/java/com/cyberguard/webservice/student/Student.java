@@ -2,15 +2,24 @@ package com.cyberguard.webservice.student;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.cyberguard.webservice.course.Course;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -25,12 +34,9 @@ public class Student implements UserDetails {
 	private String username;
 	private String password;
 	private int major;
-	
-	@JsonIgnore
-	@ManytoMany
-	@JoinTable(
-			name = "majors",
-			joinColumns = @JoinColumn(name = "ID"))
+
+	@ManyToMany(mappedBy = "students")
+	Set<Course> courses = new HashSet<>();
 	
 	public Student() {
 		
