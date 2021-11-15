@@ -19,10 +19,10 @@ public class CourseService {
 
 
 	
-	public Collection<CourseInfo> getCoursesByMajor(long major) 
+	public Collection<CourseInfo> getCoursesByMajor(long major, Long student_id) 
 	{
 	//	return null;
-		return courseRepository.findAllByMajors_ID(major);
+		return courseRepository.findAllByMajors_ID(major, student_id);
 	}//end of get majors
 
 

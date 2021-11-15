@@ -10,4 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly =true)
 public interface StudentRepository extends JpaRepository<Student, Long> {
 	Optional<Student> findByUsername(String username);
+	Student getStudentByUsername(String username);
 }
