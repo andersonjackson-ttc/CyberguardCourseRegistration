@@ -5,9 +5,7 @@ function menu() {
 
 window.onload = function()
 {
-    var btnMajor = document.getElementById('btnMajor');
-    
-    btnMajor.addEventListener('click', getCourses, false);
+    window.addEventListener('pageshow', getCourses, true);
     
 }
 function getMajorList() {
@@ -39,7 +37,7 @@ function getMajorList() {
   }
 }
 function newTable(){
-    clearcontent('table');
+    clearcontent('course_table');
     var checkbox = '<tr><td id="boxCourse"><input type="checkbox" class="taking"></td>';
     var table = ' <table><tr><th id="boxCourse"></th><th id="textCourse">Course Id</th><th id="textCourse">Course Name</th></tr>';
     table += '<tr>'  + checkbox + '<td id="textCourse">ABC-123</td><td id="textCourse">The Alphabet</td></tr>';
@@ -47,7 +45,7 @@ function newTable(){
     table += '<tr>'  + checkbox + '<td id="textCourse">ENG-101</td><td id="textCourse">Modern Literature</td></tr>';
     table += '<tr>'  + checkbox + '<td id="textCourse">MCT-101</td><td id="textCourse">Military Code Talk</td></tr></table>';
     
-    document.getElementById('table').innerHTML = table;
+    document.getElementById('course_table').innerHTML = table;
         
     
 }
@@ -76,7 +74,7 @@ function getCourses() {
       }
       table.append(appenddata1);
   
-
+      document.getElementById('course_table').innerHTML = table;
 
 
 
@@ -92,4 +90,8 @@ function getCourses() {
 
 function clearcontent(elementID) {
             document.getElementById(elementID).innerHTML = "";
-        }
+}
+
+function logout() {
+    
+}
