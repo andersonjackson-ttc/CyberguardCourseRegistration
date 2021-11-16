@@ -3,6 +3,7 @@
 <head>
   <title>Login To Student Portal</title>
   <link rel="stylesheet" href="css/styles.css">
+   <script type="text/javascript" src="js/major.js"></script>
 </head>
 <body>
     <div id="content">
@@ -15,7 +16,9 @@
 
       <p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
       <p><label>Create a password:<input type="text" name="Password" size="30" maxlength="40" id="text" class="password"></label></p>
-
+      <p>Select your major</p>
+       <select id="dropdown" onload="getMajorList()">
+        </select>
 
       <p><input type="submit" value="Create Account" id="login"></p>
     </fieldset>
