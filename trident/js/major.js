@@ -95,3 +95,19 @@ function clearcontent(elementID) {
 function logout() {
     
 }
+function getRequest()
+{
+  $(document).ready(function () {
+    $.ajax({
+      url: "/courses?major=1+",
+      type: "GET",
+      success: function (result) {
+        console.log(result);
+      }
+      error: function (error) {
+        console.log(error);
+      }
+    })
+  })
+;
+}
