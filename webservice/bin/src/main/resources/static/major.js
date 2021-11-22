@@ -9,12 +9,15 @@ function getMajorList() {
   urlString = "/major";
   $.ajax({method: "GET", url: urlString, dataType: 'json'})
     .done(function(response)  {
+     
       // response = JSON.stringify(response);
       //alert((JSON.stringify(response)));
       majorDropDown = $("#myDropdown");
       var appenddata1 = "";
       
+      clearcontent('table');
         for (var i = 0; i < response.length; i++) {
+
             appenddata1 += "<option value = '" + response[i].id + " '>" + response[i].major_Name + " </option>";
         }
         $("#myDropdown").append(appenddata1);
@@ -34,7 +37,20 @@ function getMajorList() {
 
 window.onload = function()
 {
-    window.addEventListener('pageshow', getCourses, true);
+    var btnMajor = document.getElementById('btnMajor');
+    
+    btnMajor.addEventListener('click', getCourses, false);
+    
+}
+
+function newTable(){
+    clearcontent('table');
+    var checkbox = '<tr><td id="boxCourse"><input type="checkbox" class="taking"></td>';
+    var table = ' <table><tr><th id="boxCourse"></th><th id="textCourse">Course Id</th><th id="textCourse">Course Name</th></tr>';
+    table += checkbox + '<td id="textCourse">ABC-123</td><td id="textCourse">The Alphabet</td></tr></table>';
+    
+    document.getElementById('table').innerHTML = table;
+        
     
 }
 
@@ -72,6 +88,7 @@ function getCourses() {
 
       appenddata1+="<table>"
       appenddata1 += "<tr><th id='boxCourse'></th><th id='textCourse'>Course Id</th><th id='textCourse'>Course Name</th></tr>"
+      clearcontent('table');
 
       for (var j=0; j< response.length; j++)
       {
@@ -79,7 +96,11 @@ function getCourses() {
       }
       appenddata1+="</table>"
       table.append(appenddata1);
-      document.getElementById('course_table').innerHTML = table;
+  
+
+
+
+
     })
     .fail(function(){
       alert("Error connecting to the server");
