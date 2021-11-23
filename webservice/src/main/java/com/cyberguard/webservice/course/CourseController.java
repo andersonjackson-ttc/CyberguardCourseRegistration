@@ -21,9 +21,9 @@ import com.cyberguard.webservice.student.StudentService;
 public class CourseController {
 	
 	//service variable
-	private final CourseService courseService;
-	private final MajorService majorService;
-	private final StudentService studentService;
+	public final CourseService courseService;
+	public final MajorService majorService;
+	public final StudentService studentService;
 	
 	//constructor
 	@Autowired
@@ -39,6 +39,7 @@ public class CourseController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Object name = auth.getName();
 		Student student = (Student) studentService.loadUserByUsername(name.toString());
+		major = student.getMajor();
 		
 		
 		//return the courses with the major subtracted by the courses taken by the student

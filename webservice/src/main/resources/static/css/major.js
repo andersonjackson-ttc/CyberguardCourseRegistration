@@ -53,7 +53,7 @@ function getCourses() {
     .done(function(response)  {
       // response = JSON.stringify(response);
       //alert((JSON.stringify(response)));
-      table = $("#table");
+      table = $("#course_table");
       var appenddata1 = "";
 
 

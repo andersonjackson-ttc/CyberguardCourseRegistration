@@ -24,7 +24,7 @@ public class RegistrationController {
 	
 	@PostMapping
 	@GetMapping
-	public String register(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("id") int id) {
+	public String register(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("major") int id) {
 		RegistrationRequest request = new RegistrationRequest(username, password, id);
 		registrationService.register(request);
 		
