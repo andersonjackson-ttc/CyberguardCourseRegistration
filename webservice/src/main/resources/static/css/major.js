@@ -1,6 +1,7 @@
+console.log(5);
 var done=false;
 var submit = document.getElementById('submit');
-var courseLink = "";
+var courseLink = "/courses?major=1+";
 
 
 function getMajorList() {
@@ -32,27 +33,12 @@ function getMajorList() {
   }
 }
 
-window.onload = function()
-{
-    window.addEventListener('pageshow', getCourses, true);
-    
-}
-
-
-//get the id of the dropdown
-function Class(str)
-{
-  courseLink = "/courses?major="+str.toString()+"+";
-  //courseLink =+ "/courses?majors=" /*+ str.toString()*/;
-  //alert(courseLink);
-}
 
 function getCourses() {
-
-  $.ajax({method: "GET", url: courseLink, dataType: 'json'})
+  $.ajax({method: "GET", url: "/courses?major=1+", dataType: 'json'})
     .done(function(response)  {
       // response = JSON.stringify(response);
-      //alert((JSON.stringify(response)));
+      //alert(((response.toString())));
       table = $("#course_table");
       var appenddata1 = "";
 
@@ -71,15 +57,17 @@ function getCourses() {
 
 
       appenddata1+="<table>"
+      
       appenddata1 += "<tr><th id='boxCourse'></th><th id='textCourse'>Course Id</th><th id='textCourse'>Course Name</th></tr>"
 
       for (var j=0; j< response.length; j++)
       {
+        console.log(9);
         appenddata1+= "<tr><td id='boxCourse'><input type='checkbox' class='taking'></td>" + "<td id='textCourse'>" + response[j].course_ID+ "</td>" + "<td id='textCourse'>"+ response[j].course_Name + "</td></tr>";
       }
       appenddata1+="</table>"
       table.append(appenddata1);
-      document.getElementById('course_table').innerHTML = table;
+      //document.getElementById('course_table').innerHTML = table;
     })
     .fail(function(){
       alert("Error connecting to the server");
@@ -104,6 +92,23 @@ function getCourses() {
   function clearcontent(elementID) {
             document.getElementById(elementID).innerHTML = "";
         }
+
+// window.onload = function()
+// {
+//     window.addEventListener('pageshow', getCourses, true);
+    
+// }
+
+
+// //get the id of the dropdown
+// function Class(str)
+// {
+//   courseLink = "/courses?major="+str.toString()+"+";
+//   //courseLink =+ "/courses?majors=" /*+ str.toString()*/;
+//   //alert(courseLink);
+// }
+
+
 
 
 

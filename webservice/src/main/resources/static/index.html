@@ -6,12 +6,13 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
   <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
   <script type="text/javascript" src="css/major.js"></script>
   <title>Select Your Courses</title>
 </head>
-<body>
+<body onload="getCourses()">
    
   <div id="header">
     <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/major.html';"><img id="back" src="img/go%20back.png"></button>
@@ -19,12 +20,12 @@
       <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/login.html/login?logout';" id="logout">Logout</button>
   </div>
   <div id="main">
-      <div id="course_table" onload="getCourses()">
+      <div id="course_table">
         
       </div>
 
 
-      <p><input type="submit" value="Take Selected Courses" id="submit"></p>
+      <p style="margin-bottom:30px;"><input style="margin-bottom:30px;" type="submit" value="Take Selected Courses" id="submit"></p>
   </div>
   <div id="footer">
     <p>:copyright: Trident Technical College</p>
