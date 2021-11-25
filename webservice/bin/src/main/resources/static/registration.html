@@ -1,50 +1,38 @@
-<!doctype html>
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
 <html>
 <head>
-  <title>Register</title>
+  <title>Login To Student Portal</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="css/major.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
 </head>
 <body>
     <div id="content">
   <div id="header">
+    <button onclick="window.location.href='https://www.tridenttech.edu/student/life/st_portal.htm';"><img id="back" src="img/go%20back.png" ></button></a>
     <img id="logo" src="img/download.png">
   </div>
   <div id="main">
-    
   <!--<form method="post" action="/registration">-->
-    <form action="/registration" method="POST">
+    <form action="/registration" th:object="${student}" method="POST" enctype="utf8">
     <fieldset><legend>Register</legend>
 
       <!--<p><label>Create a username:<input type="text" name="username" size="30" maxlength="40" id="text" class="username"></label></p>
       <p><label>Create a password:<input type="text" name="password" size="30" maxlength="40" id="text" class="password"></label></p>-->
       
       <div>
-      <label>Username: <input type="text" name="username"></label>
-        
+      <label th:text="#{label.student.username}">username:</label>
+        <input th:field="*{username}"/>
         <!--Error notification goes here
         <p th:each="error : ${#fields.errors('username')}"
           th:text="${error}">Error</p> -->
           </div>
 
           <div>
-            <label>Password: <input type="password" name="password"></label> 
-              <!--
           <label th:text="#{label.student.password}">password:</label>
-        <input type="password" th:field="*{password}"/>-->
+        <input type="password" th:field="*{password}"/>
       <!--  Error notification goes here
       <p th:each="error : ${#fields.errors('password')}"
           th:text="${error}">Error</p> -->
           </div>
-
-
-        <!--major dropdown-->
-          <select style="margin-top:20px; margin-left: auto; margin-right: auto;" class="dropbtn" name="major" id="myDropdown" onclick="getMajorList()">
-            <option class="dropdown-content" selected="true" disabled="disabled">Choose Major</option>    
-
-          </select>
 
 
 
@@ -57,6 +45,5 @@
   <div id="footer">
     <p>:copyright: Trident Technical College</p>
   </div>
-    </div>
 </body>
 </html>

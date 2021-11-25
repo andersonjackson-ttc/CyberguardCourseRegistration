@@ -13,9 +13,9 @@ public class RegistrationService {
 	
 	private final StudentService studentService;
 	
-	public String register(RegistrationRequest request) {
+	public void register(RegistrationRequest request) {
 		// TODO Auto-generated method stub
-		return studentService.signUpStudent(new Student(request.getUsername(), request.getPassword()));
+		studentService.signUpStudent(new Student(request.getUsername(), request.getPassword(), request.getMajor()));
 	}
 
 }
