@@ -17,7 +17,7 @@ import com.cyberguard.webservice.student.Student;
 import com.cyberguard.webservice.student.StudentService;
 
 
-@RequestMapping(value="/courses")
+
 @RestController
 public class CourseController {
 	
@@ -34,6 +34,7 @@ public class CourseController {
 		this.studentService = studentService;
 	}
 	
+	@RequestMapping(value="/courses")
 	@GetMapping
 	public Collection<CourseInfo> getCourses(@RequestParam("major") long major) {
 		//get the current student
@@ -53,17 +54,17 @@ public class CourseController {
 		String[] newCourseList = coursesTaken;
 	}
 	
-	@RequestMapping(value = "/editCourses", method = RequestMethod. POST)
-	public void editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
+	@RequestMapping(value = "/editCourses", method = RequestMethod.POST)
+	public String editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
 	{
 		
 			for(int i = 0 ; i < checkboxValue.length; i++)
 			{
-				System.out.println(checkboxValue[i]);
+				return checkboxValue[i];
 			}
 				
 
-			System.out.println("nothing");
+		return "nothing";
 	}
 
 

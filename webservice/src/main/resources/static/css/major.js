@@ -63,7 +63,7 @@ function getCourses() {
       for (var j=0; j< response.length; j++)
       {
         console.log(9);
-        appenddata1+= "<tr><td id='boxCourse'><input type='checkbox' class='taking' value='"+response[j].course_ID+"' name = '"+response[j].course_Name+"'></td>" + "<td id='textCourse'>" + response[j].course_ID+ "</td>" + "<td id='textCourse'>"+ response[j].course_Name + "</td></tr>";
+        appenddata1+= "<tr><td id='boxCourse'><input type='checkbox' class='taking' value='"+response[j].course_ID+"' name = 'CourseTaken'></td>" + "<td id='textCourse'>" + response[j].course_ID+ "</td>" + "<td id='textCourse'>"+ response[j].course_Name + "</td></tr>";
       }
       appenddata1+="</table>"
       table.append(appenddata1);
