@@ -20,22 +20,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "courses")
 public class Course {
 	@Id
-	private String Course_ID;
+	public String Course_ID;
 	
 	@ManyToMany(mappedBy = "courses")
 	Set<Major> majors = new HashSet<>();
 	
-	@JsonIgnore
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-			name = "student_courses",
-			joinColumns = @JoinColumn(name = "Course_ID", referencedColumnName = "Course_ID"),
-			inverseJoinColumns = @JoinColumn(name = "ID", referencedColumnName = "id")
-			)
-	private Set<Student> students = new HashSet<>();
 	
-	private String Course_Section;
-	private String Course_Name;
+	@ManyToMany(mappedBy = "courses")
+	Set<Student> students = new HashSet<>();
+	public String Course_Section;
+	public String Course_Name;
 	
 	
 	public Course() {
@@ -48,9 +42,13 @@ public class Course {
 		this.Course_Name = courseName;
 		System.out.println("Success");
 	}
+	public Course(String id)
+	{
+		this.Course_ID = id; 
+	}
 	
 	//interface to get the desired attributes
-	interface CourseInfo {
+	public interface CourseInfo {
 		String getCourse_ID();
 		String getCourse_Name();
 	}

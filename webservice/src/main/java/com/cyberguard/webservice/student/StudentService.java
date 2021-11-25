@@ -43,4 +43,12 @@ public class StudentService implements UserDetailsService
 		student.setPassword(encodedPassword);
 		studentRepository.save(student);
 	}
+
+
+
+
+	public void save(Student student) {
+		// TODO Auto-generated method stub
+		studentRepository.save(student);
+	}
 }

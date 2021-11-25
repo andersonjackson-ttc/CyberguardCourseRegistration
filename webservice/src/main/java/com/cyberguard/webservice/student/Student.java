@@ -19,6 +19,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.cyberguard.webservice.course.Course;
+import com.cyberguard.webservice.course.Course.CourseInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -34,9 +35,14 @@ public class Student implements UserDetails {
 	private String username;
 	private String password;
 	private int major;
-
-	@ManyToMany(mappedBy = "students")
-	Set<Course> courses = new HashSet<>();
+	@JsonIgnore
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "student_courses",
+			joinColumns = @JoinColumn(name = "ID", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "Course_ID", referencedColumnName = "Course_ID")
+			)
+	public Set<Course> courses = new HashSet<>();
 	
 	public Student() {
 		
@@ -102,6 +108,11 @@ public class Student implements UserDetails {
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	public Collection<Course> getCourses() {
+		// TODO Auto-generated method stub
+		return courses;
 	}
 	
 	

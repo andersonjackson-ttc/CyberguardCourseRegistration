@@ -1,10 +1,12 @@
 package com.cyberguard.webservice.course;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +20,7 @@ import com.cyberguard.webservice.student.StudentService;
 
 
 
+
 @RestController
 public class CourseController {
 	
@@ -25,6 +28,7 @@ public class CourseController {
 	public final CourseService courseService;
 	public final MajorService majorService;
 	public final StudentService studentService;
+	
 	
 	//constructor
 	@Autowired
@@ -47,25 +51,10 @@ public class CourseController {
 		//return the courses with the major subtracted by the courses taken by the student
 		return courseService.getCoursesByMajor(major, student.getId());
 	}//end of get majors
-	
-	public void saveCourse(Student student, @RequestParam("CourseTaken")String[] coursesTaken)
-	{
-		Student newStudent = new Student();
-		String[] newCourseList = coursesTaken;
-	}
-	
-	@RequestMapping(value = "/editCourses", method = RequestMethod.POST)
-	public String editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
-	{
-		
-			for(int i = 0 ; i < checkboxValue.length; i++)
-			{
-				return checkboxValue[i];
-			}
-				
 
-		return "nothing";
-	}
+	
+	
+	
 
 
 }
