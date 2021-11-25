@@ -28,6 +28,12 @@ public class CourseService {
 	//	return null;
 		return courseRepository.findAllByMajors_ID(major, student_id);
 	}//end of get majors
+	
+	
+	//get course by course ID
+	public Course findCourseByCourse_ID(String Course_ID) {
+		return courseRepository.findByCourse_ID(Course_ID);
+	}
 
 
 

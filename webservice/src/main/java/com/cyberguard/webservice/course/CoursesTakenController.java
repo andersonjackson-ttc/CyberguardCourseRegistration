@@ -46,7 +46,8 @@ public class CoursesTakenController {
 			for(int j = 0; j < courses.length; j++)
 				
 			{
-				courses2.add(new Course(courses[j]));
+				courses2.add(courseService.findCourseByCourse_ID(courses[j]));
+				System.out.println(courseService.findCourseByCourse_ID(courses[j]));
 			}
 			student.getCourses().addAll(courses2);
 			studentService.save(student);
