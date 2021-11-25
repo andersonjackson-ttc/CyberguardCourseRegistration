@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cyberguard.webservice.course.Course.CourseInfo;
@@ -46,7 +47,24 @@ public class CourseController {
 		return courseService.getCoursesByMajor(major, student.getId());
 	}//end of get majors
 	
+	public void saveCourse(Student student, @RequestParam("CourseTaken")String[] coursesTaken)
+	{
+		Student newStudent = new Student();
+		String[] newCourseList = coursesTaken;
+	}
 	
+	@RequestMapping(value = "/editCourses", method = RequestMethod. POST)
+	public void editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
+	{
+		
+			for(int i = 0 ; i < checkboxValue.length; i++)
+			{
+				System.out.println(checkboxValue[i]);
+			}
+				
+
+			System.out.println("nothing");
+	}
 
 
 }
