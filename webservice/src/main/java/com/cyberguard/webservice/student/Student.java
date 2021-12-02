@@ -44,6 +44,15 @@ public class Student implements UserDetails {
 			)
 	public Set<Course> courses = new HashSet<>();
 	
+	@JsonIgnore
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "student_enrolled_courses",
+			joinColumns = @JoinColumn(name = "ID", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "Course_ID", referencedColumnName = "Course_ID")
+			)
+	public Set<Course> enrolledCourses = new HashSet<>();
+	
 	public Student() {
 		
 	}
@@ -114,6 +123,12 @@ public class Student implements UserDetails {
 		// TODO Auto-generated method stub
 		return courses;
 	}
+	
+	public Collection<Course> getEnrolledCourses() {
+		// TODO Auto-generated method stub
+		return enrolledCourses;
+	}
+	
 	
 	
 

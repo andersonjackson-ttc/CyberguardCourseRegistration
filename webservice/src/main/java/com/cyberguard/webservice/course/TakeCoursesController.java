@@ -15,7 +15,7 @@ import com.cyberguard.webservice.student.Student;
 import com.cyberguard.webservice.student.StudentService;
 
 @Controller
-public class CoursesTakenController {
+public class TakeCoursesController {
 
 	//service variable
 		public final CourseService courseService;
@@ -25,11 +25,15 @@ public class CoursesTakenController {
 		
 		//constructor
 		@Autowired
-		public CoursesTakenController(CourseService courseService, MajorService majorService, StudentService studentService) {
+		public TakeCoursesController(CourseService courseService, MajorService majorService, StudentService studentService) {
 			this.courseService = courseService;
 			this.majorService = majorService;
 			this.studentService = studentService;
 		}
+		
+
+		
+		
 	@RequestMapping(value = "/editCourses", method = RequestMethod.POST)
 	public String editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
 	{
@@ -47,7 +51,48 @@ public class CoursesTakenController {
 				
 			{
 				courses2.add(courseService.findCourseByCourse_ID(courses[j]));
-				System.out.println(courseService.findCourseByCourse_ID(courses[j]));
+			}
+			student.getCourses().addAll(courses2);
+			studentService.save(student);
+			
+			return "index";
+	}
+	
+	@RequestMapping(value = "/enrollCourses", method = RequestMethod.POST)
+	public String enrollCourses(@RequestParam("enrollCourse")String[] checkboxValue)
+	{
+		//load student
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		Object name = auth.getName();
+		Student student = (Student) studentService.loadUserByUsername(name.toString());
+		//create courses variable
+		String[] courses = new String[checkboxValue.length];
+			for(int i = 0 ; i < checkboxValue.length; i++)
+			{
+				
+				try 
+				{
+					if(courses[i].equals(1)) 
+						throw new Exception("Error: This class has a pre-requisite course that needs to be taken.");
+					
+					courses[i] = checkboxValue[i];
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					System.out.print(e);
+				}
+				finally 
+				{
+					
+				}
+
+				
+			}
+			//fetch enroleld courses table
+			Collection<Course> courses2 = student.getEnrolledCourses();
+			for(int j = 0; j < courses.length; j++)
+				
+			{
+				courses2.add(courseService.findCourseByCourse_ID(courses[j]));
 			}
 			student.getCourses().addAll(courses2);
 			studentService.save(student);
