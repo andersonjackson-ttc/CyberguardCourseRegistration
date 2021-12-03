@@ -34,7 +34,7 @@ public class TakeCoursesController {
 
 		
 		
-	@RequestMapping(value = "/editCourses", method = RequestMethod.POST)
+	@RequestMapping(value = "/editCoursesOffRightNowForTesting", method = RequestMethod.POST)
 	public String editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
 	{
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -58,8 +58,8 @@ public class TakeCoursesController {
 			return "index";
 	}
 	
-	@RequestMapping(value = "/enrollCourses", method = RequestMethod.POST)
-	public String enrollCourses(@RequestParam("enrollCourse")String[] checkboxValue)
+	@RequestMapping(value = "editCourses"/*"/enrollCourses"*/, method = RequestMethod.POST)
+	public String enrollCourses(@RequestParam("CourseTaken")String[] checkboxValue)
 	{
 		//load student
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -70,31 +70,21 @@ public class TakeCoursesController {
 			for(int i = 0 ; i < checkboxValue.length; i++)
 			{
 				
-				try 
-				{
-					if(courses[i].equals(1)) 
-						throw new Exception("Error: This class has a pre-requisite course that needs to be taken.");
+//					if(courses[i].equals(1)) 
+//						throw new Exception("Error: This class has a pre-requisite course that needs to be taken.");
 					
 					courses[i] = checkboxValue[i];
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					System.out.print(e);
-				}
-				finally 
-				{
-					
-				}
 
 				
 			}
-			//fetch enroleld courses table
+			//fetch enrolled courses table
 			Collection<Course> courses2 = student.getEnrolledCourses();
 			for(int j = 0; j < courses.length; j++)
 				
 			{
 				courses2.add(courseService.findCourseByCourse_ID(courses[j]));
 			}
-			student.getCourses().addAll(courses2);
+			student.getEnrolledCourses().addAll(courses2);
 			studentService.save(student);
 			
 			return "index";

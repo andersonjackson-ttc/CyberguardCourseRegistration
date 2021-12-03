@@ -28,17 +28,18 @@ public class Course {
 	
 	@ManyToMany(mappedBy = "courses")
 	Set<Student> students = new HashSet<>();
-	public String Course_Section;
 	public String Course_Name;
+	
+	@ManyToMany(mappedBy = "courses")
+	Set<Student> student = new HashSet<>();
 	
 	
 	public Course() {
 		
 	}
 	
-	public Course(String id, String courseSection, String courseName) {
+	public Course(String id, String courseName) {
 		this.Course_ID = id;
-		this.Course_Section = courseSection;
 		this.Course_Name = courseName;
 		System.out.println("Success");
 	}
@@ -69,13 +70,6 @@ public class Course {
 		this.majors = majors;
 	}
 
-	public String getCourse_Section() {
-		return Course_Section;
-	}
-
-	public void setCourse_Section(String course_Section) {
-		Course_Section = course_Section;
-	}
 
 	public String getCourse_Name() {
 		return Course_Name;
