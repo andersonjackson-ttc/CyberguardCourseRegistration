@@ -12,11 +12,12 @@
   <title>Select Your Courses</title>
 </head>
 <body>
-   
+   <div id="content">
   <div id="header">
     <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/major.html';"><img id="back" src="img/go%20back.png"></button>
     <img id="logo" src="img/download.png">
-      <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/login.html/login?logout';" id="logout">Logout</button>
+      <form action="/login?logout">
+      <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/login.html';" id="logout">Logout</button></form>
   </div>
   <div id="main">
       <div id="course_table">
@@ -27,7 +28,8 @@
       <p><input type="submit" value="Take Selected Courses" id="submit"></p>
   </div>
   <div id="footer">
-    <p>:copyright: Trident Technical College</p>
+    <h3>© Trident Technical College</h3>
   </div>
+       </div>
 </body>
 </html>
