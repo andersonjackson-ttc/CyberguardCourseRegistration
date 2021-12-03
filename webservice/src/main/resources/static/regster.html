@@ -1,0 +1,35 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+<html>
+<head>
+  <title>Login To Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+   <script type="text/javascript" src="js/major.js"></script>
+</head>
+<body>
+    <div id="content">
+  <div id="header">
+    <img id="logo" src="img/download.png">
+  </div>
+        <div id="content">
+  <div id="main">
+  <form method="post" action="/login">
+    <fieldset><legend>Register</legend>
+
+      <p><label>Create a username:<input type="text" name="Username" size="30" maxlength="40" id="text" class="username"></label></p>
+      <p><label>Create a password:<input type="text" name="Password" size="30" maxlength="40" id="text" class="password"></label></p>
+      <p>Select your major</p>
+       <select id="dropdown" onload="getMajorList()">
+        </select>
+
+      <p><input type="submit" value="Create Account" id="login"></p>
+    </fieldset>
+    </form>
+      <p id="link">Have an account? <a href="http://127.0.0.1:55931/trident/www/login.html" id="link"> Log In</a></p>
+  </div>
+  <div id="footer">
+    <h3>© Trident Technical College</h3>
+  </div>
+    </div>
+    </div>
+</body>
+</html>
