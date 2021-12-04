@@ -1,0 +1,173 @@
+#header{
+    justify-content: space-between;
+    display: flex;
+    background-color: grey;
+}
+#header button{
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 2px rgb(40,50,100);
+}
+#logo{
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#back{
+    width: 50px;
+    height: 50px;
+}
+#logout{
+    font-weight: bold;
+}
+#content{
+    background-color: lightgray;
+}
+#main{
+    height: 400px;
+    background-color: lightgray;
+    text-align: center;
+}
+body{
+    background-color: lightblue;
+}
+#dropdown{
+    margin: 50px auto;
+    display: block;
+    width: 200px;
+    height: 25px;
+    box-shadow: 4px 2px rgb(40,50,100);
+}
+.submit{
+    display: block;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    background-color: royalblue;
+    color: white;
+    box-shadow: 4px 2px rgb(40,50,100);
+}
+.submit:hover{
+    background-color: dodgerblue;
+    color: black;
+}
+#submit{
+    display: block;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color: darkgrey;
+    color: #4A0404;
+    box-shadow: 4px 2px rgb(40,50,100);
+}
+#submit:hover{
+    background-color: gray;
+    color: black;
+}
+#footer{
+    background-color: grey;
+    height: 50px
+}
+#footer p{
+    margin-left: 45%;
+}
+form{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin-top: 4.2%; 
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    
+}
+fieldset{
+    padding: 10px;
+    box-shadow: 5px 10px rgb(40,50,70);
+}
+lablel{
+    margin-left: auto;
+    margin-right: auto;
+}
+#text{
+    background-color: palegoldenrod;
+    box-shadow: 4px 2px rgb(60,60,70);
+}
+input{
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    box-shadow: 4px 2px rgb(120,60,70);
+}
+#textCourse{
+    
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+    padding: 10px;
+}
+#boxCourse{
+    width: 30px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+td{
+    background-color: silver;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+}
+th{
+    background-color: #4A0404;
+    color: white;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 1.5em;
+    padding: 10px;
+}
+.taking{
+    width: 50px;
+    height: 50px;
+}
+#link{
+    display: inline-block;
+}
+button a{
+    text-decoration: none;
+    color: black;
+}
+.right{
+    margin-right: 5px;
+}
+#login{
+    font-weight: bold;
+    background-color: royalblue;
+    color: white;
+    height: 50px;
+    width: 95%;
+    display: block;
+    box-shadow: 4px 3px rgb(40,50,100);
+}
+#login:hover{
+    background-color: dodgerblue;
+    color: black;
+}
+a{
+    color: blue
+}
+a:hover{
+    color: darkseagreen;
+}

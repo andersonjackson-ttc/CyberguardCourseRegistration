@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="css/major.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+</head>
+<body>
+    <div id="content">
+  <div id="header">
+    <img id="logo" src="img/download.png">
+  </div>
+  <div id="main">
+    
+  <!--<form method="post" action="/registration">-->
+    <form action="/registration" method="POST">
+    <fieldset><legend>Register</legend>
+
+      <!--<p><label>Create a username:<input type="text" name="username" size="30" maxlength="40" id="text" class="username"></label></p>
+      <p><label>Create a password:<input type="text" name="password" size="30" maxlength="40" id="text" class="password"></label></p>-->
+      
+      <div>
+      <label>Username: <input type="text" name="username"></label>
+        
+        <!--Error notification goes here
+        <p th:each="error : ${#fields.errors('username')}"
+          th:text="${error}">Error</p> -->
+          </div>
+
+          <div>
+            <label>Password: <input type="password" name="password"></label> 
+              <!--
+          <label th:text="#{label.student.password}">password:</label>
+        <input type="password" th:field="*{password}"/>-->
+      <!--  Error notification goes here
+      <p th:each="error : ${#fields.errors('password')}"
+          th:text="${error}">Error</p> -->
+          </div>
+
+
+        <!--major dropdown-->
+          <select style="margin-top:20px; margin-left: auto; margin-right: auto;" class="dropbtn" name="major" id="myDropdown" onclick="getMajorList()">
+            <option class="dropdown-content" selected="true" disabled="disabled">Choose Major</option>    
+
+          </select>
+
+
+
+
+      <p><input type="submit" th:text="#{label.form.submit}" id="login"></p>
+    </fieldset>
+    </form>
+      <p id="link">Have an account? <a href="/login.html" id="link"> Log In</a></p>
+  </div>
+  <div id="footer">
+    <p>:copyright: Trident Technical College</p>
+  </div>
+    </div>
+</body>
+</html>
