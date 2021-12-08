@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `courses` (
   `Course_ID` varchar(255) NOT NULL,
-  `Course_Section` varchar(255) DEFAULT NULL,
   `Course_Name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,26 +36,27 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`Course_ID`, `Course_Section`, `Course_Name`) VALUES
-('ACC101', 'W01', 'Accounting'),
-('ADM101', NULL, NULL),
-('AMT101', 'W01', 'Aircraft Building'),
-('BAK101', 'W01', 'Cake Conceptualizing'),
-('BIS101', 'W01', 'Acronym Making'),
-('CAD101', 'W01', 'Tracing'),
-('CET101', 'W01', 'Back Pat Lecture'),
-('CPT101', 'W01', 'Java Programming'),
-('ECO101', NULL, NULL),
-('ECO102', 'W01', 'Macroeconomics'),
-('ENG101', NULL, NULL),
-('GEN101', 'W01', 'technology in the field'),
-('IST101', 'W01', 'CAT5 Identification'),
-('MAT101', 'W01', 'College Algebra'),
-('MET101', 'W01', '3D pen usage'),
-('NSM101', 'W01', 'How to Not Get Zapped'),
-('OTA101', 'W01', 'Feeling Good About Your Job'),
-('PTA101', 'W01', 'Muscles 101'),
-('VET101', 'W01', 'All About Monkeys');
+INSERT INTO `courses` (`Course_ID`, `Course_Name`) VALUES
+('MAT101',  'College Algebra'),
+('ENG101',  'English 101'),
+('ECO101',  'Microeconomics'),
+('ECO102',  'Macroeconomics'),
+('CPT101',  'Java Programming'),
+('ACC101',  'Accounting'),
+('ADM101',  'Administrating'),
+('AMT101',  'Aircraft Building'),
+('BAK101',  'Cake Conceptualizing'),
+('BIS101', 'Acronym Making'),
+('CET101', 'Back Pat Lecture'),
+('CAD101', 'Tracing'),
+('IST101', 'CAT5 Identification'),
+('GEN101', 'technology in the field'),
+('MGT101', 'Micromanaging'),
+('MET101',  '3D pen usage'),
+('NSM101', 'How to Not Get Zapped'),
+('OTA101', 'Feeling Good About Your Job'),
+('PTA101', 'Muscles 101'),
+('VET101', 'All About Monkeys');
 
 -- --------------------------------------------------------
 
@@ -101,12 +101,13 @@ INSERT INTO `majors` (`ID`, `Major_Name`) VALUES
 (8, 'Computer Programming '),
 (9, 'Information Systems Specialist '),
 (10, 'General Technology '),
-(11, 'Management '),
+(11, 'Management'),
 (12, 'Mechanical Engineering Technology '),
 (13, 'Network Systems Management '),
 (14, 'Occupational Therapy Assistant '),
 (15, 'Physical Therapist Assistant '),
-(16, 'Veterinary Technology');
+(16, 'Veterinary Technology'),
+(17, 'All Courses');
 
 -- --------------------------------------------------------
 
@@ -178,7 +179,7 @@ INSERT INTO `major_courses` (`id`, `Course_ID`) VALUES
 (11, 'ENG101'),
 (11, 'ECO101'),
 (11, 'ECO102'),
-(11, NULL),
+(11, 'MGT101'),
 (12, 'MAT101'),
 (12, 'ENG101'),
 (12, 'ECO101'),
@@ -188,7 +189,7 @@ INSERT INTO `major_courses` (`id`, `Course_ID`) VALUES
 (13, 'ENG101'),
 (13, 'ECO101'),
 (13, 'ECO102'),
-(0, 'NSM101'),
+(13, 'NSM101'),
 (14, 'MAT101'),
 (14, 'ENG101'),
 (14, 'ECO101'),
