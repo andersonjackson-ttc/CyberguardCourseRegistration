@@ -1,16 +1,17 @@
 package com.cyberguard.webservice.course;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cyberguard.webservice.course.Course.CourseInfo;
@@ -47,9 +48,19 @@ public class CourseController {
 		Student student = (Student) studentService.loadUserByUsername(name.toString());
 		major = student.getMajor();
 		
+		//filter courses that have pre-requisites
+		Collection<CourseInfo> courses = courseService.getCoursesByMajor(major, student.getId());
+
+		Iterator<CourseInfo> iter = courses.iterator();
+		while(iter.hasNext()) {
+			if(!(courseService.seeNoPreReq(iter.next().getCourse_ID(), student.getId()))) {
+				iter.remove();
+			}
+		}
+			
 		
 		//return the courses with the major subtracted by the courses taken by the student
-		return courseService.getCoursesByMajor(major, student.getId());
+		return courses;
 	}//end of get majors
 
 	

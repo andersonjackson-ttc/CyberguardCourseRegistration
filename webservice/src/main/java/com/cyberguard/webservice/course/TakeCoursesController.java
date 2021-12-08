@@ -43,6 +43,7 @@ public class TakeCoursesController {
 		String[] courses = new String[checkboxValue.length];
 			for(int i = 0 ; i < checkboxValue.length; i++)
 			{
+				
 				courses[i] = checkboxValue[i];
 				
 			}
@@ -59,7 +60,7 @@ public class TakeCoursesController {
 	}
 	
 	@RequestMapping(value = "editCourses"/*"/enrollCourses"*/, method = RequestMethod.POST)
-	public String enrollCourses(@RequestParam("CourseTaken")String[] checkboxValue)
+	public String enrollCourses(@RequestParam("CourseTaken")String[] checkboxValue) throws Exception
 	{
 		//load student
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -69,13 +70,9 @@ public class TakeCoursesController {
 		String[] courses = new String[checkboxValue.length];
 			for(int i = 0 ; i < checkboxValue.length; i++)
 			{
-				
-//					if(courses[i].equals(1)) 
-//						throw new Exception("Error: This class has a pre-requisite course that needs to be taken.");
-					
-					courses[i] = checkboxValue[i];
 
-				
+				courses[i] = checkboxValue[i];
+
 			}
 			//fetch enrolled courses table
 			Collection<Course> courses2 = student.getEnrolledCourses();
