@@ -1,0 +1,39 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+<html>
+<head>
+    <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data: ; style-src * 'self' 'unsafe-inline'; media-src * " />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="css/styles.css"/>
+  
+  <script type="text/javascript" src="js/major.js"></script>
+  <title>Select Your Courses</title>
+</head>
+<body>
+   <div id="content">
+  <div id="header">
+    <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/major.html';"><img id="back" src="img/go%20back.png"></button>
+    <img id="logo" src="img/download.png">
+      <form action="/login?logout">
+      <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/login.html';" id="logout">Logout</button></form>
+  </div>
+  <div id="main">
+      <select id="dropdown" onchange="clearcontent(table);">
+          <option>Show All Courses</option>
+          <option>Show Required Courses</option>
+        </select>
+      <div id="table">
+        
+      </div>
+
+
+      <p><input type="submit" value="Take Selected Courses" id="submit"></p>
+  </div>
+  <div id="footer">
+    <h3>© Trident Technical College</h3>
+  </div>
+       </div>
+</body>
+</html>
