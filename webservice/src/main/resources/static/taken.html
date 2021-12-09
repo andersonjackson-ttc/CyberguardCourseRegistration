@@ -15,12 +15,17 @@
 <body onload="getCourses()">
    
   <div id="header">
-    <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/major.html';"><img id="back" src="img/go%20back.png"></button>
+    <form action="/index.html">
+      <button onclick=""><img id="back" src="img/go%20back.png"></button>
+    </form>
+    
     <img id="logo" src="img/download.png">
-      <button onclick="window.location.href='http://127.0.0.1:55931/trident/www/login.html/login?logout';" id="logout">Logout</button>
+    <form action="/login.html?logout">  
+    <button id="logout">Logout</button>
+      </form>
   </div>
   <div id="main">
-    <form action="/editCourses" method="POST">
+    <form action="/completeCourses" method="POST">
       <div id="course_table">
         
       </div>

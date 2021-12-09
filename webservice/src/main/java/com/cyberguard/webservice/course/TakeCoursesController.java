@@ -34,7 +34,7 @@ public class TakeCoursesController {
 
 		
 		
-	@RequestMapping(value = "/editCoursesOffRightNowForTesting", method = RequestMethod.POST)
+	@RequestMapping(value = "/completeCourses", method = RequestMethod.POST)
 	public String editCoursesTaken(@RequestParam("CourseTaken")String[] checkboxValue)
 	{
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
