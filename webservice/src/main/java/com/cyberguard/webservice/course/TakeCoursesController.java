@@ -60,7 +60,7 @@ public class TakeCoursesController {
 	}
 	
 	@RequestMapping(value = "editCourses"/*"/enrollCourses"*/, method = RequestMethod.POST)
-	public String enrollCourses(@RequestParam("CourseTaken")String[] checkboxValue) throws Exception
+	public String enrollCourses(@RequestParam("CourseTaken")String[] checkboxValue) 
 	{
 		//load student
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
